@@ -13,7 +13,7 @@ public class PrimeraConsulta {
               Connection conexion = DriverManager.getConnection(
    "jdbc:mysql://localhost:3306/empresa?useSSL=false&serverTimezone=UTC",
     "root",
-    ""
+    "abc123."
    
 );
             // creamos el objeto Statement
