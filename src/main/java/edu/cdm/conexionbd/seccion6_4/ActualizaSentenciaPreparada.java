@@ -1,4 +1,4 @@
-package edu.cdm.conexionbd.seccion5_8;
+package edu.cdm.conexionbd.seccion6_4;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -17,6 +17,11 @@ public class ActualizaSentenciaPreparada {
             // pstmt.setInt(1, 1);
             pstmt.setFloat(1, 3.5f);
             pstmt.setInt(2, 7844);
+            pstmt.executeUpdate();
+
+            //Podría hacerse para otros registros
+             pstmt.setFloat(1, 30000f);
+            pstmt.setInt(2, 7900);
             pstmt.executeUpdate();
 
             // Con try with resources no es necesario cerrar los recursos de forma explícita

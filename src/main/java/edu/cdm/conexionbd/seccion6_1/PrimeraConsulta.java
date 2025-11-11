@@ -1,4 +1,4 @@
-package edu.cdm.conexionbd.seccion5_5;
+package edu.cdm.conexionbd.seccion6_1;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,8 +10,12 @@ public class PrimeraConsulta {
     public static void main(String[] args) {
         try {
             // Establecemos la conexion con la BD
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/empresa?user=root&password=abc123.",
-             "root", "abc123.");
+              Connection conexion = DriverManager.getConnection(
+   "jdbc:mysql://localhost:3306/empresa?useSSL=false&serverTimezone=UTC",
+    "root",
+    ""
+   
+);
             // creamos el objeto Statement
             Statement sentencia = conexion.createStatement();
             // ejecutamos la consulta

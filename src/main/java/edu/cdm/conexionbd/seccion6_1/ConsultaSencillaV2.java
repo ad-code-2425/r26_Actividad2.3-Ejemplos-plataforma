@@ -1,5 +1,4 @@
-package edu.cdm.conexionbd.seccion5_5;
-
+package edu.cdm.conexionbd.seccion6_1;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;

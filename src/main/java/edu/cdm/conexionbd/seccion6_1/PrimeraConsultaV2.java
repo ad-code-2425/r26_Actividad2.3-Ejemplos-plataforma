@@ -1,4 +1,4 @@
-package edu.cdm.conexionbd.seccion5_5;
+package edu.cdm.conexionbd.seccion6_1;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -12,8 +12,8 @@ import edu.cdm.conexionbd.properties.ConexionProperties;
 public class PrimeraConsultaV2 {
     public static void main(String[] args) {
 
-        //Usamos try-with-resources y nos ahorramos cerrar los recursos explicítamente
-        //Leemos de un fichero los datos de conexión
+        // Usamos try-with-resources y nos ahorramos cerrar los recursos explicítamente
+        // Leemos de un fichero los datos de conexión
         try (// Establecemos la conexion con la BD
                 Connection conexion = DriverManager.getConnection(
                         ConexionProperties.createUrlConnection("src/main/resources/db.sqlserver.properties"));
@@ -27,9 +27,9 @@ public class PrimeraConsultaV2 {
             while (resul.next()) {
                 System.out.printf("%d, %s, %s %n", resul.getInt(1), resul.getString(2), resul.getString(3));
             }
-         
+
         } catch (SQLException | IOException e) {
-            
+
             e.printStackTrace();
         }
 

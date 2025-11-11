@@ -1,4 +1,4 @@
-package edu.cdm.conexionbd.seccion5_5;
+package edu.cdm.conexionbd.seccion6_2;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,11 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class ActualizacionEliminacion {
+public class DMLDelete {
 
     public static void main(String[] args) {
-        // establecemos la conexion
-
         try {
             Connection conexion = DriverManager.getConnection(
                     "jdbc:sqlserver://localhost:1433;database=empresa;user=user;password=abc123.;trustServerCertificate=true;");
@@ -18,10 +16,11 @@ public class ActualizacionEliminacion {
             Statement stm = conexion.createStatement();
             // Se han cambiado las tablas para trabajar con la BD empresa
 
-          mostrarDepts(conexion);
+            mostrarDepts(conexion);
 
             // ejecuta el borrado, la ejecucion devuelve 19, numero de filas afectadas
-            System.out.println("Se han eliminado " + stm.executeUpdate("delete from dept where DNAME = 'IT' ") + " registros");
+            System.out.println(
+                    "Se han eliminado " + stm.executeUpdate("delete from dept where DNAME = 'IT' ") + " registros");
 
             mostrarDepts(conexion);
 
@@ -31,7 +30,6 @@ public class ActualizacionEliminacion {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     private static void mostrarDepts(Connection conexion) {
@@ -46,8 +44,9 @@ public class ActualizacionEliminacion {
                 System.out.printf("%d, %s, %s %n", resul.getInt(1), resul.getString(2), resul.getString(3));
             }
         } catch (SQLException e) {
-           
+
             e.printStackTrace();
         }
     }
+
 }

@@ -1,4 +1,4 @@
-package edu.cdm.conexionbd.seccion5_11;
+package edu.cdm.conexionbd.seccion6_7;
 
 import java.io.IOException;
 import java.sql.Connection;

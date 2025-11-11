@@ -16,9 +16,11 @@ public class inserConProcAlma {
      */
     public static void main(String[] args) {
         try {
-            // Cargar el driver de mysql
-           // Class.forName("com.mysql.jdbc.Driver");
+            // Cargar el driver de mysql => obsoleto
+            // Class.forName("com.mysql.jdbc.Driver");
 
+            //para que esto funcione, hay que ejecutar con anterioridad los scripts de src/main/resources/seccion_6_3_1/MySQL
+           
             // Cadena de conexión para conectar con MySQL en localhost,
             //seleccionar la base de datos llamada ‘test’
             // con usuario y contraseña del servidor de MySQL: root y admin

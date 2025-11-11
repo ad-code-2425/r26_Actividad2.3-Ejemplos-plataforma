@@ -1,4 +1,4 @@
-package edu.cdm.conexionbd.seccion5_5;
+package edu.cdm.conexionbd.seccion6_2;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,15 +6,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class ActualizacionInsercion {
+public class Actualizacion {
     public static void main(String[] args) {
         // establecemos la conexion
-
+        Connection conexion;
         try {
-            Connection conexion = DriverManager.getConnection(
+            // String urljdbc = "jdbc:oracle:thin:ejemplo/ejemplo@localhost:1521:XE";
+            // conexion = DriverManager.getConnection(urljdbc, "scott", "tiger");
+            conexion = DriverManager.getConnection(
                     "jdbc:sqlserver://localhost:1433;database=empresa;user=user;password=abc123.;trustServerCertificate=true;");
             // crea la sentencia
             Statement stm = conexion.createStatement();
+            // // ejecuta la actualizacion la ejecucion y devuelve el numero de filas
+            // afectadas, que debería ser 1.
+            // System.out.println(stm.executeUpdate("insert into jobs values ('ID TEACH',
+            // 'PROFESOR IT', 2500, 5000)"));
+            // // ejecuta el borrado, la ejecucion devuelve el número de filas afectadas
+            // System.out.println(stm.executeUpdate("delete from jobs "));
+
             // Se han cambiado las tablas para trabajar con la BD empresa
             // ejecuta la actualizacion la ejecucion devuelve 1, numero de filas afectadas
             System.out.println(stm.executeUpdate("insert into dept(DNAME, LOC) values ('IT', 'Marín (Pontevedra)')"));
@@ -37,12 +46,11 @@ public class ActualizacionInsercion {
             // System.out.println(stm.executeUpdate("delete from dept where DNAME = 'IT'
             // "));
 
+         
             stm.close(); // Cerrar Statement
-                         // cierra la conexion
-            conexion.close();
+            conexion.close(); // cierra la conexion
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 }
